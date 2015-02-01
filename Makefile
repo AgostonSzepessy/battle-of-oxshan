@@ -6,7 +6,7 @@ SOURCES=main.cpp Game.cpp GameStateManager.cpp GameState.cpp MenuState.cpp PlayS
 	HealthBar.cpp Brick.cpp BoundingBox.cpp Powerup.cpp HealthUp.cpp Background.cpp Sorcerer.cpp GameOverState.cpp \
 	InvincibilityUp.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=main
+EXECUTABLE=battle-of-oxshan
 
 all: depend $(SOURCES) $(EXECUTABLE)
 	
@@ -20,7 +20,7 @@ clean:
 	rm -f *.o
 
 wipe:
-	rm -f *.o main depend
+	rm -f *.o $(EXECUTABLE) depend
 	
 depend: $(SOURCES)
 	gcc -M $(CFLAGS) $(SOURCES) >depend
