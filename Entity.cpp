@@ -3,8 +3,8 @@
 Entity::Entity()
 {
 	c = new sf::Clock;
-	elapsed = new sf::Time;
-	last = new sf::Time;
+//	elapsed = new sf::Time;
+//	last = new sf::Time;
 	delay = 1000;
 	sprite = new AnimatedSprite;
 	texture = new sf::Texture;
@@ -175,8 +175,8 @@ bool Entity::checkCollision(const BoundingBox &box)
 Entity::~Entity()
 {
 	delete c;
-	delete elapsed;
-	delete last;
+//	delete elapsed;
+//	delete last;
 	sprite->cleanUp();
 	delete sprite;
 	delete texture;

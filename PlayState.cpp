@@ -526,8 +526,7 @@ void PlayState::createWave()
 
 		// two different types of enemies can be created
 		// based on how many were generated
-		//int enemyType[numEnemies];
-		int *enemyType = new int[numEnemies];
+		std::vector<int> enemyType(numEnemies);
 
 		// loop through enemies and assign them random enemy types: BlueThing or Sorcerer
 		for (int i = 0; i < numEnemies; ++i)
@@ -548,7 +547,6 @@ void PlayState::createWave()
 				int y = rand() % HEIGHT;
 				enemies.push_back(std::move(Sorcerer::create(x, y)));
 			}
-			delete[] enemyType;
 		}
 	}
 

@@ -183,16 +183,12 @@ class Entity
 		 * Clock to keep track of whether entities can fire bullets.
 		 */
 		sf::Clock *c;		
-		/** 
-		 * How much time has passed between shots. If it's greater
-		 * than delay, the entity can fire.
-		 */
-		sf::Time *elapsed;
+
 		/**
 		 * The time of the when the previous shot was fired. This is used for
 		 * calculating whether *elapsed is greater than delay.
 		 */
-		sf::Time *last;
+//		sf::Time *last;
 		/**
 		 * Delay between shots. Measured in milliseconds.
 		 */
@@ -239,5 +235,9 @@ class Entity
 		
 	private:
 	
-	
+		/**
+		 * How much time has passed between shots. If it's greater
+		 * than delay, the entity can fire.
+		 */
+//		sf::Time *elapsed;
 };

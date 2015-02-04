@@ -29,7 +29,7 @@ class Frame
 		 * @brief addFrame Adds a frame to the back of the vector
 		 * @param rect The Frame to add
 		 */
-		void addFrame(const sf::IntRect &rect);
+		void addFrame(const sf::IntRect rect);
 		/**
 		 * @brief getFrames Returns a vector that contains all the frames
 		 * that have been added.

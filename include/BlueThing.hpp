@@ -53,7 +53,5 @@ class BlueThing : public Enemy
 		
 		bool reloading;
 		bool startReload;
-		int reloadAccumulator;
-		std::string filename = "res/sprites/enemy/bluething-spritesheet.png";
-		
+		int reloadAccumulator;		
 };

@@ -3,6 +3,7 @@
 Frame::Frame()
 {
 	delay = -1;
+	frames.empty();
 }
 
 void Frame::setDelay(double d)
@@ -10,7 +11,7 @@ void Frame::setDelay(double d)
 	delay = d;
 }
 
-void Frame::addFrame(const sf::IntRect &rect)
+void Frame::addFrame(const sf::IntRect rect)
 {
 	frames.push_back(rect);
 }

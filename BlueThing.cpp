@@ -23,7 +23,7 @@ BlueThing::BlueThing(int x, int y)
 	startReload = false;
 	reloadAccumulator = 1000;
 
-	if (!texture->loadFromFile(filename))
+	if (!texture->loadFromFile("res/sprites/enemy/bluething-spritesheet.png"))
 	{
 		std::cout << "not able to load BlueThing texture" << std::endl;
 	}

@@ -101,7 +101,7 @@ std::unique_ptr<Sorcerer> Sorcerer::create(int x, int y)
 
 void Sorcerer::update(const Entity &e, const BoundingBox &box)
 {
-	Enemy::moveTowardsPlayer(e);
+	moveTowardsPlayer(e);
 	move(box);
 	if (!dead)
 		sprite->update();
