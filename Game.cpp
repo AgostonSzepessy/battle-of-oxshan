@@ -25,8 +25,8 @@ void Game::run()
 		{
 			accumulator -= STEP.asMilliseconds();
 			update();
-			draw();
 		}
+		draw();
 	}
 }
 
