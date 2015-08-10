@@ -110,6 +110,7 @@ Player::Player(int x, int y, std::string filename)
 	health = maxHealth;
 	damage = 5;
 
+	particleSystem = new ParticleSystem(750);
 }
 
 void Player::update(const BoundingBox &box)
@@ -126,6 +127,8 @@ void Player::update(const BoundingBox &box)
 
 void Player::draw(sf::RenderWindow *window)
 {
+	if(particleSystem)
+		window->draw(*particleSystem);
 	window->draw(*sprite);
 	healthBar->draw(window);
 }
@@ -320,6 +323,12 @@ void Player::move(const BoundingBox &box)
 
 	x = tempx + dx;
 	y = tempy + dy;
+
+	if(particleSystem)
+	{
+		particleSystem->setEmitter(sf::Vector2f(static_cast<float>(x), static_cast<float>(y)));
+		particleSystem->update(sf::milliseconds(invAccumulator));
+	}
 }
 
 void Player::teleport(int x, int y)
@@ -359,10 +368,15 @@ bool Player::invincibleTimer()
 	invCurrentTime = c->getElapsedTime().asMilliseconds();
 	invAccumulator += invCurrentTime - invPrevTime;
 	invPrevTime = invCurrentTime;
+	// invincibility time is over so return false
 	if (invAccumulator > invTime)
 	{
+		delete particleSystem;
+		particleSystem = nullptr;
 		return false;
 	}
+	if(!particleSystem)
+		particleSystem = new ParticleSystem(750);
 	return true;
 }
 
@@ -483,4 +497,5 @@ Player::~Player()
 	delete dying;
 	delete teleportStart;
 	delete teleportEnd;
+	delete particleSystem;
 }

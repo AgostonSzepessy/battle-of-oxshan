@@ -4,7 +4,7 @@ LDFLAGS= -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system
 SOURCES=main.cpp Game.cpp GameStateManager.cpp GameState.cpp MenuState.cpp PlayState.cpp PauseState.cpp Entity.cpp \
 	Player.cpp Bullet.cpp Enemy.cpp BlueThing.cpp PlayerBullet.cpp EnemyBullet.cpp AnimatedSprite.cpp Frame.cpp \
 	HealthBar.cpp Brick.cpp BoundingBox.cpp Powerup.cpp HealthUp.cpp Background.cpp Sorcerer.cpp GameOverState.cpp \
-	InvincibilityUp.cpp
+	InvincibilityUp.cpp ParticleSystem.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=battle-of-oxshan
 

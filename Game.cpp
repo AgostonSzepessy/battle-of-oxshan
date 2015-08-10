@@ -2,7 +2,7 @@
 
 Game::Game()
 {
-	window.create(sf::VideoMode(WIDTH, HEIGHT), "Game");
+	window.create(sf::VideoMode(WIDTH, HEIGHT), "Game", sf::Style::Close);
 	window.setVerticalSyncEnabled(false);
 	accumulator = 0;
 }
